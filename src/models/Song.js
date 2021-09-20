@@ -14,6 +14,11 @@ const songSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        required: true,
+        enum: ['C1', 'C2', 'C3']
+    },
     date: {
         type: Date,
         default: Date.now()
