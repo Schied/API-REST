@@ -22,8 +22,9 @@ exports.find = (req, res, next) => {
 
 exports.filter = (req, res) => {
     if(req.body.e) return res.status(500).send({e});
-    if(req.body.users) return res.status(200).send({users});
-    return res.status(404).send({message: 'NOT FOUND!'});
+    if(!req.body.users) return res.status(404).send({message: 'NOT FOUND!'});
+    let users = req.body.users;
+    return res.status(200).send({users});
 };
 
 exports.create = (req, res) => {
