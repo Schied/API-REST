@@ -1,12 +1,12 @@
 const express = require('express');
 const UserCtrl = require('../controllers/userController');
 
-const Router = express.router();
+const router = express.Router();
 
-Router.get('/', UserCtrl.find)
+router.get('/', UserCtrl.getAll)
       .post('/', UserCtrl.create)
-      .get('/:key/:value')
-      .put('/:key/:value')
-      .delete('/:key/:value')
+      .get('/:key/:value', UserCtrl.find, UserCtrl.filter)
+      .put('/:key/:value', UserCtrl.find, UserCtrl.update)
+      .delete('/:key/:value', UserCtrl.find, UserCtrl.remove)
 
-module.exports = Router;
+module.exports = router;
