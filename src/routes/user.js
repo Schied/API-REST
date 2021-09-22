@@ -1,10 +1,10 @@
 const express = require('express');
-const SongCtrl = require('../controllers/songController');
+const UserCtrl = require('../controllers/userController');
 
 const Router = express.router();
 
-Router.get('/', SongCtrl.find)
-      .post('/', SongCtrl.create)
+Router.get('/', UserCtrl.find)
+      .post('/', UserCtrl.create)
       .get('/:key/:value')
       .put('/:key/:value')
       .delete('/:key/:value')
