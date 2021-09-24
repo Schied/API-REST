@@ -3,8 +3,8 @@ const User = require('../models/User');
 
 exports.getAll = (req, res)=>{
     User.find({})
-        .then(users => users ? res.status(200).send({users}) : res.status(204).send({message: ''})
-        ).catch(e => res.status(500).send({e}));
+        .then(users => users ? res.status(200).send({users}) : res.status(204).send({message: ''}))
+        .catch(e => res.status(500).send({e}));
 };
 
 exports.find = (req, res, next) => {
