@@ -6,6 +6,10 @@ const userSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     user: {
         type: String,
         required: true
@@ -13,7 +17,14 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    playlist: [{
+        name: {
+            type: String,
+            required: true
+        },
+        songs: [String]
+    }]
 });
 
 const user = mongoose.model('User', userSchema);
